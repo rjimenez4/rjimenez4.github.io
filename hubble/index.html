@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Càlcul de H₀ a partir de supernoves de tipus Ia</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.17/dist/katex.min.css" integrity="sha384-E3Ch6GfEmQxX4+zL1TNBHZTahPudFnkb3bn736MpiTymT+kdWvkqbcXC9w+7NUFC" crossorigin="anonymous">
+    
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.17/dist/katex.min.js" integrity="sha384-igoYAuiJMUBJiuLpEFYNX9OyoHaasGfyvrvIUkmt4j2TRh25e9u8QTsj8QWZxCx7" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.17/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        .calculation {
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .formula {
+            font-weight: bold;
+            color: #d9534f;
+            white-space: pre-wrap; /* Ensures formulas are displayed correctly */
+        }
+    </style>
+</head>
+<body>
+<h1>Què és una supernova?</h1>
+  <p>Éa una estrella que ha esclatat i ha format molts elements quimics com el ferro, el calci , el silici durant l'explosió, com podem veure a la pagina web del programa js9 creat per Universitat de Harbar Smithsonian Institute</p>
+  <p>Si obro la apgina web<a bref="https://js9.si.edu/"> js9 </a> automaticament s'obre la supernova Cassiopea A i si clico analisis i especter puc veure les caracteristiques dels fotons, el pic amb energia 1,7 kiloelectrons-volts es silici</p>
+  <p>El calci dels meus osos, el ferro de la mema sang, el silici del meu ordinador provenen d'explocsions de supernoves perquè tenen pru energia per produir a partir d'elements quimics lleugers com l'hidrogen o l'heli elements molt més pests (com Fe,)</p>
+  <p>Les supernoves tipus Ia esclaten amb la meteixa força, son candelas estàndar i es pot calcular la distancia a la que es troba una galaxia si tenim la sort de detectar una supernova esclatant. Per calcular ña distancia comparem la explosio estandar amb l'explosio observada es a dir la magnitud absoluta de la brillantor amb la magnitud aparent de la brillanto (M) amb la magnitud aparent de la brillanto (m)  </p>
+  <p>Tmabe podem calcular distancies amb el corriment al vermell que consisteix que quant una galaxia s'allunya la llum i les linies espectrals es mouen capa vermell.</p>
+  <h2>Corriment al vermell</h2>
+  <p>Sì observo que l'hdrogen a de tenir una linea espectral de 656,3 nm i en una galaxia de 700 nm perquè a corregut el vermell la seva z o de corriment es (700-653,3) : entre 656,3 igual a 0,066</p>
+    <h1>Càlcul de la Distància a una Supernova de Tipus Ia</h1>
+
+    <p>Les supernoves de tipus Ia són utilitzades com a estàndards de distància perquè tenen una brillantor màxima coneguda. Això ens permet calcular la distància a una supernova a partir de la seva magnitud observada (magnitud aparent) i la seva magnitud intrínseca (magnitud absoluta).</p>
+
+    <h2>1. Fórmula per calcular la distància</h2>
+    <p>La fórmula que utilitzarem per calcular la distància a una supernova és:</p>
+    <div class="formula">\( d = 10 \times 10^{\frac{m - M}{5}} \)</div>
+    <p>On:</p>
+    <ul>
+        <li><strong>d</strong> és la distància a la supernova en parsecs (pc).</li>
+        <li><strong>m</strong> és la magnitud aparent de la supernova (mesurada des de la Terra).</li>
+        <li><strong>M</strong> és la magnitud absoluta de la supernova (una constant coneguda per les supernoves de tipus Ia).</li>
+    </ul>
+
+    <h2>2. Exemple de càlcul</h2>
+    <p>Suposem que tenim una supernova de tipus Ia amb les següents dades:</p>
+    <ul>
+        <li>Magnitud aparent (<strong>m</strong>): 18.2</li>
+        <li>Magnitud absoluta (<strong>M</strong>): -19.0 (valor conegut per les supernoves de tipus Ia)</li>
+    </ul>
+
+    <div class="calculation">
+        <h3>Pas 1: Aplicar la fórmula per calcular la distància</h3>
+        <p>Utilitzem la fórmula per calcular la distància:</p>
+        <div class="formula">\( d = 10 \times 10^{\frac{18.2 - (-19.0)}{5}} \)</div>
+
+        <h3>Pas 2: Realitzar els càlculs</h3>
+        <p>Primer calculem la diferència entre les magnituds:</p>
+        <div class="formula">18.2 - (-19.0) = 18.2 + 19.0 = 37.2</div>
+        <p>A continuació, dividim per 5:</p>
+        <div class="formula">37.2 / 5 = 7.44</div>
+        <p>Finalment, calculem \(10\) a la potència de \(7.44\):</p>
+        <div class="formula">\(10^{7.44} \approx 2.748 \times 10^7\)</div>
+        <p>Multipliquem per \(10\):</p>
+        <div class="formula">\(d \approx 10 \times 2.748 \times 10^7 = 2.748 \times 10^8\) parsecs</div>
+
+        <h3>Resultat final</h3>
+        <p>Així que la distància a la supernova és aproximadament:</p>
+        <div class="formula"><strong>\(d \approx 2.748 \times 10^8\) parsecs</strong></div>
+    </div>
+
+    <h1>Relació entre velocitat de recessió i desplaçament al vermell</h1>
+
+    <p>Una vegada que tenim la distància a la supernova, podem mesurar el desplaçament al vermell (\(z\)) de la galàxia que conté la supernova. El desplaçament al vermell es relaciona amb la velocitat de recessió de la galàxia segons:</p>
+    <div class="formula">\( v = c \times z \)</div>
+
+    <h2>4. Aplicar la llei de Hubble</h2>
+
+    <p>Finalment, utilitzarem la llei de Hubble per calcular la constant de Hubble (\(H_0\)). La llei estableix:</p>
+    <div class="formula">\( v = H_0 \times d \)</div>
+
+    Reorganitzem:
+    <div class="formula">\(H_0 = \frac{v}{d}\)</div>
+
+    Exemple:
+    - \(z = 0.05\), \(d = 200\) Mpc
+     
+   Càlcul final:
+   \(H_0=75 km/s/Mpc.\)
+
+</body>
+</html>
