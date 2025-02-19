@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Compostos trobats a Bennu</title>
+<!-- CSS de DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- JS de DataTables -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js">
+    
+  </script>
+  
+  
+  <body>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #005288;
+        }
+       
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #005288;
+            padding-bottom: 5px;
+        }
+        .section p {
+            text-align: justify;
+        }
+        .section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+       .logos {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .logos img {
+        height: 100px; /* Igual alçada per a tots els logos */
+        margin: 0 15px; /* Espaiat entre els logos */
+        vertical-align: middle; /* Assegura que estiguin alineats verticalment */
+    }
+    #taula-meteorits {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #taula-meteorits th {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+    }
+
+    #taula-meteorits td, #taula-meteorits th {
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+
+    #taula-meteorits tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #taula-meteorits tr:hover {
+        background-color: #ddd;
+    }
+        .cita-bibliografica {
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    color: #333;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #007BFF;
+    background-color: #f9f9f9;
+}
+
+.cita-bibliografica cite {
+    font-style: italic;
+    color: #555;
+}
+
+.cita-bibliografica .autor {
+    font-weight: bold;
+}
+
+.cita-bibliografica .anio {
+    color: #777;
+}
+
+    
+</style>
+
+<div class="logos">
+    <img src="nasalogo.jpg" alt="NASA Logo">
+    <img src="esalogo.png" alt="ESA Logo">
+    <img src="jaxalogo.png" alt="JAXA Logo">
+</div>  
+
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <h1>Troballes de Joan Oró i altres investigadors en meteorits</h1>
+
+<table id="taula-meteorits" class="display">
+    <thead>
+        <tr>
+            <th>Investigador</th>
+            <th>Meteorit o cometa</th>
+            <th>Troballa</th>
+            <th>Any</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Joan Oró</td>
+            <td>Murchison (CM2)</td>
+            <td>Descobriment d'aminoàcids</td>
+            <td>1971</td>
+        </tr>
+        <tr>
+            <td>David P. Glavin i col·laboradors</td>
+            <td>Tagish Lake</td>
+            <td>Presència d'aminoàcids amb distribució racèmica</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Koichi Nakamura i col·laboradors</td>
+            <td>Ryugu</td>
+            <td>Carbonats de calci i magnesi, i compostos orgànics complexos</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td>Michael Zolensky i col·laboradors</td>
+            <td>Monahans</td>
+            <td>Halita amb inclusions de fluid que contenien aigua asteroidal</td>
+            <td>1999</td>
+        </tr>
+        <tr>
+            <td>F. Capaccioni i col·laboradors</td>
+            <td>Cometa 67P/Churyumov-Gerasimenko</td>
+            <td>Aminoàcid com glicina, fonamental per la vida i aigua diferent isotòpicament a la de la Terra, pel que es pensa que l'aigua de la Terra no ve de cometes.</td>
+            <td>2015</td>
+        </tr>
+        <tr>
+            <td>P. Schmitt-Kopplin i col·laboradors</td>
+            <td>Meteorit Murchinson</td>
+            <td>Van analitzar l'interior del meteorit i van trobar milers de compostos orgànics.</td></td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    <h2>Referència en format APA 7 de Joan Oró</h2>
+    <p>
+        Oro J, Gibert J, Lichtenstein H, Wikstrom S, Flory DA (1971) Aminoacids, aliphatic and aromatic hydrocarbons in the Murchison meteorite. Nature 230:105-106.
+    </p>
+
+    <h2>Nota</h2>
+    <p>
+        Les troballes de Joan Oró van ser fonamentals per a la comprensió de l'origen de la vida, demostrant que les nucleobases i aminoàcids podien haver arribat a la Terra a través de meteorits.
+    </p>
+    
+
+    <h1>Troballes de l'ESA sobre Cometes, Meteorits i Molècules Orgàniques</h1>
+    
+    <h2>1. Missió Rosetta i el Cometa 67P</h2>
+    <p>La missió <strong>Rosetta</strong> va ser llançada per l'ESA per estudiar el cometa <em>67P/Churyumov-Gerasimenko</em>. La sonda va trobar:</p>
+    <ul>
+        <li>Presència de <strong>molècules orgàniques complexes</strong>, com glicina, un aminoàcid clau per la vida.</li>
+        <li>Aigua amb una composició isotòpica diferent a la terrestre, suggerint que els cometes podrien no ser la font principal de l'aigua de la Terra.</li>
+        <li>Molècules com formaldehid, metà i cianur d'hidrogen.</li>
+    </ul>
+    
+    <div class="cita-bibliografica">
+    <span class="autor">Capaccioni, F., Coradini, A., Filacchione, G., Erard, S., Arnold, G., Drossart, P., De Sanctis, M. C., Bockelée-Morvan, D., Capria, M. T., Tosi, F., Leyrat, C., Schmitt, B., Quirico, E., Cerroni, P., Mennella, V., Raponi, A., Ciarniello, M., McCord, T., Moroz, L., Palomba, E., Ammannito, E., Barucci, M. A., Bellucci, G., Benkhoff, J., Bibring, J. P., Blanco, A., Blecka, M., Carlson, R., Carsenty, U., Colangeli, L., Combes, M., Combi, M., Crovisier, J., Encrenaz, T., Federico, C., Fink, U., Fonti, S., Ip, W. H., Irwin, P., Jaumann, R., Kuehrt, E., Langevin, Y., Magni, G., Mottola, S., Orofino, V., Palumbo, P., Piccioni, G., Schade, U., Taylor, F., Tiphène, D., Tozzi, G. P., Beck, P., Biver, N., Bonal, L., Combe, J.-P., Despan, D., Flamini, E., Fornasier, S., Frigeri, A., Grassi, D., Gudipati, M., Longobardo, A., Markus, K., Merlin, F., Orosei, R., Rinaldi, G., Stephan, K., Cartacci, M., Cicchetti, A., Giuppi, S., Hello, Y., Henry, F., Jacquinod, S., Noschese, R., Peter, G., Politi, R., Reess, J. M., & Semery, A. </span> 
+    (<span class="anio">2015</span>). 
+    <cite>The organic-rich surface of comet 67P/Churyumov-Gerasimenko as seen by VIRTIS/Rosetta.</cite> <em>Science, 347</em>(6220), aaa0628. https://doi.org/10.1126/science.aaa0628
+</div>
+
+    
+        
+
+    <h2>2. Estudis de Meteorits</h2>
+    <p>L'ESA ha col·laborat en l'estudi de meteorits com el de <strong>Tagish Lake</strong> i altres condrites carbonàcies, revelant:</p>
+    <ul>
+        <li>Presència d'<strong>aminoàcids</strong> i altres compostos orgànics simples.</li>
+        <li>Evidències que alguns meteorits poden haver contribuït a portar <strong>ingredients per la vida</strong> a la Terra primitiva.</li>
+    </ul>
+
+    <h2>3. Implicacions Científiques</h2>
+    <p>Aquestes troballes donen suport a la hipòtesi que els <strong>elements bàsics per la vida</strong> són comuns a l'espai i podrien estar presents en molts altres sistemes planetaris.</p>
+
+
+    
+    
+<p>L'anàlisi del 2010 de l'interior intacte del <b>meteorit Murchinson</b> mitjançant espectrometria de masses FT-ICR d'alta resolució (12 T) ha revelat una diversitat molecular sense precedents, amb <strong>31.554 senyals moleculars úniques</strong> detectades en l'interval de masses 150-1000 Da en extractes metanòlics. Els compostos orgànics solubles presenten <strong>10.299 fórmules elementals diferents</strong> (CHNOS), amb una composició mitjana de C₁₀₀H₁₅₅O₂₀N₃S₃.</p>
+
+
+  <p>Schmitt-Kopplin, P., Gabelica, Z., Gougeon, R. D., Fekete, A., Kanawati, B., Harir, M., Gebefuegi, I., Eckel, G., & Hertkorn, N. (2010). High molecular diversity of extraterrestrial organic matter in Murchison meteorite revealed 40 years after its fall. <i>Proceedings of the National Academy of Sciences</i>, 107(7), 2763-2768.</p>
+
+
+
+    <h1>Resum de la Missió Apophis i Bennu</h1>
+
+    <div class="section">
+        <h2>Missió a Apophis</h2>
+        <p>
+            L'asteroide 99942 Apophis és un objecte proper a la Terra (NEO) amb un diàmetre estimat de 335 metres. Descobert el 2004, inicialment es va considerar com una amenaça potencial per a la Terra, però observacions recents han descartat qualsevol risc d'impacte durant els propers 100 anys.
+        </p>
+        <p>
+            El 2021, observacions de radar van permetre als astrònoms refinar la trajectòria d'Apophis, eliminant qualsevol possibilitat d'impacte el 2068. El 13 d'abril de 2029, Apophis passarà a menys de 32.000 quilòmetres)
+            de la Terra, oferint una oportunitat única per estudiar-lo de prop.
+        </p>
+        <p>
+            La missió OSIRIS-APEX, abans coneguda com a OSIRIS-REx, s'ha redirigit per estudiar Apophis durant el seu proper pas proper a la Terra. La nau espacial realitzarà un vol proper el 2029 i després es reunirà amb l'asteroide per una campanya de 18 mesos per mapar la seva superfície i analitzar la seva composició química.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Missió Anterior a Bennu</h2>
+        <p>
+            La missió OSIRIS-REx va ser llançada per estudiar l'asteroide Bennu i recollir mostres de la seva superfície. Després d'un viatge de dos anys, la nau espacial va arribar a Bennu el 2018 i va passar més de dos anys estudiant l'asteroide abans de recollir una mostra el 2020.
+        </p>
+        <p>
+            La mostra va ser retornada amb èxit a la Terra el setembre de 2023, proporcionant als científics material valuós per entendre millor la formació i evolució del sistema solar. Aquesta missió va marcar un èxit significatiu en l'exploració d'asteroides i va establir les bases per a futures missions com OSIRIS-APEX.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Conclusió</h2>
+        <p>
+            Tant la missió a Bennu com la propera missió a Apophis demostren l'compromís de la NASA per explorar i entendre els objectes propers a la Terra. Aquestes missions no només ens ajuden a comprendre millor el nostre sistema solar, sinó que també milloren la nostra capacitat per protegir la Terra d'impactes potencials d'asteroides.
+        </p>
+    </div>
+
+
+
+
+
+    <h1>Anàlisi i Significat dels Compostos trobats a l'asteroide Bennu</h1>
+
+
+    <h2>Context de la troballa</h2>
+    <p>
+        Les mostres recollides de Bennu per la missió <strong>OSIRIS-REx</strong> han revelat una varietat de compostos orgànics i inorgànics que aporten informació crucial sobre la formació del Sistema Solar i els possibles orígens de la vida a la Terra. Aquestes troballes inclouen <strong>sals diverses, aminoàcids, amines, nucleobases</strong> i altres compostos químics essencials.
+    </p>
+
+    <h2>Significació científica dels compostos trobats</h2>
+    <ul>
+        <li><strong>Aminoàcids i nucleobases:</strong> La presència d’aquests compostos essencials per a la vida suggereix que les molècules prebiòtiques podrien haver estat presents a l’espai abans de l’aparició de la vida a la Terra. Aquest fet dóna suport a la teoria de la <em>panspèrmia</em>, que proposa que la vida o els seus precursors podrien haver estat transportats a la Terra mitjançant asteroides o cometes.</li>
+        
+        <li><strong>Sals evaporítiques:</strong> La descoberta de <em>carbonats, sulfats, clorurs i fluorurs</em> de sodi indica que Bennu va experimentar processos d’alteració aquosa al seu asteroide pare. Aquestes sals es van formar durant l’evaporació de salmorra en una etapa primerenca de la història de l’asteroide, revelant l’existència d’aigua líquida en el passat.</li>
+        
+        <li><strong>Amoníac i amines:</strong> L’alta concentració d’amoníac i amines en les mostres indica que Bennu podria haver-se format en una regió freda del Sistema Solar, rica en gels i compostos volàtils. Aquests compostos són essencials per a la síntesi d’aminoàcids i altres molècules orgàniques.</li>
+        
+        <li><strong>Magnetita i sulfurs:</strong> Aquests minerals indiquen que Bennu va experimentar reaccions d’interacció aigua-roca que van alterar la seva composició química. Això suggereix que l’asteroide pare de Bennu contenia <em>reservoris d’aigua</em> que van influir en la seva mineralogia.</li>
+    </ul>
+
+    <h2>Implicacions astrobiològiques</h2>
+    <p>
+        Les salmorres trobades a Bennu representen entorns on la vida podria haver evolucionat o persistir. Això és significatiu perquè condicions similars s’han detectat en cossos del Sistema Solar com <strong>Ceres</strong> i <strong>Encèlad</strong>. La troballa de <em>fosfats de sodi i magnesi</em>, juntament amb nucleobases, suggereix que Bennu podria haver estat un lloc potencial per a la síntesi de molècules prebiòtiques complexes com els <strong>nucleòtids</strong>.
+    </p>
+
+    <h2>Comparació amb altres cossos del Sistema Solar</h2>
+    <p>
+        Les troballes a Bennu són comparables amb altres missions com <strong>Hayabusa2</strong>, que va recollir mostres de l’asteroide <em>Ryugu</em>. Ambdós asteroides mostren signes d’alteració aquosa i presència de compostos orgànics complexos. A més, les salmorres trobades a Bennu s’assemblen a les identificades a <em>Ceres</em> i als <em>plomalls d’Encèlad</em>, fet que amplia la nostra comprensió dels processos químics en diferents entorns del Sistema Solar.
+    </p>
+
+    <h2>Conclusió</h2>
+    <p>
+        Les mostres de Bennu proporcionen una finestra única al passat del Sistema Solar i les possibles rutes químiques cap a l’origen de la vida. La presència de compostos orgànics i minerals formats per processos aquosos suggereix que asteroides com Bennu podrien haver estat claus en el lliurament de materials prebiòtics a la Terra primitiva.
+    </p>
+
+
+    
+    
+    
+    
+    <h2>Com es van trobar els compostos</h2>
+    <p>
+        Les mostres recollides de l'asteroide Bennu per la missió <strong>OSIRIS-REx</strong> van ser analitzades en laboratoris amb condicions estrictament controlades per evitar la contaminació terrestre. Diverses tècniques analítiques avançades van ser utilitzades per identificar els compostos químics presents:
+    </p>
+    <ul>
+        <li><strong>Espectrometria de masses d'alta resolució (FTICR-MS)</strong>: Utilitzada per detectar milers de molècules orgàniques en els extractes de metanol.</li>
+        <li><strong>Espectrometria de masses amb cromatografia de gasos (pyGC-QqQ-MS)</strong>: Per identificar aminoàcids i altres compostos volàtils.</li>
+        <li><strong>Cromatografia líquida amb detecció de fluorescència UV i espectrometria de masses (LC-FD/MS)</strong>: Per analitzar la presència i quantitat d’aminoàcids específics.</li>
+        <li><strong>Microscopi amb làser de dues etapes (μ-L2MS)</strong>: Per identificar formaldehid i amoníac a nivell microscòpic.</li>
+    </ul>
+
+    <h2>Significat dels descobriments</h2>
+    <p>
+        Els compostos trobats a Bennu tenen un gran significat per a la ciència, especialment en l'estudi de l'origen de la vida a la Terra i la formació del Sistema Solar:
+    </p>
+    <ul>
+        <li><strong>Aminoàcids i matèria orgànica soluble</strong>: La presència de 33 aminoàcids, inclosos 14 aminoàcids proteics comuns en la biologia terrestre, suggereix que les molècules essencials per a la vida podrien haver estat presents abans que la vida aparegués a la Terra. Això dóna suport a la teoria que l'origen de la vida podria haver estat influenciat per compostos orgànics extraterrestres.</li>
+        <li><strong>Amoníac i amines</strong>: L'elevada concentració d'amoníac (~13.6 μmol/g) indica que Bennu es va formar o va acumular gel d’amoníac d’una regió freda del Sistema Solar. L’amoníac és clau en la síntesi d’aminoàcids i altres molècules orgàniques.</li>
+        <li><strong>Hidrocarburs aromàtics policíclics i N-heterocicles</strong>: La detecció de nucleobases com l'adenina, la guanina, la citosina, la timina i l'uracil, essencials per a l'ADN i l'ARN, suggereix que els blocs bàsics de la genètica podrien haver-se format en l’espai i arribat a la Terra mitjançant impactes d'asteroides o cometes.</li>
+        <li><strong>Distribució racèmica dels aminoàcids</strong>: Tots els aminoàcids no proteics trobats estaven en formes racèmiques (igual quantitat de formes "D" i "L"), cosa que indica que l'asteroide no ha estat influenciat per processos biològics. Això planteja preguntes sobre per què la vida a la Terra utilitza predominantment la forma "L" dels aminoàcids.</li>
+    </ul>
+
+    <h2>Implicacions per a l'origen de la vida</h2>
+    <p>
+        Els resultats suggereixen que els asteroides com Bennu podrien haver jugat un paper clau en portar molècules prebiòtiques a la Terra primitiva. La presència d’aminoàcids, amines, àcids carboxílics i nucleobases confirma que els ingredients necessaris per a la vida podrien haver estat abundants en el Sistema Solar primitiu.
+    </p>
+
+
+
+
+    <h1>Compostos trobats a l'asteroide Bennu</h1>
+    <ul>
+        <li><strong>Amoníac</strong></li>
+        <li><strong>Matèria orgànica soluble rica en nitrogen</strong></li>
+        <li><strong>Aminoàcids</strong>
+            <ul>
+                <li>14 dels 20 aminoàcids proteics utilitzats en la biologia terrestre</li>
+                <li>19 aminoàcids no proteics</li>
+                <li>Glicina (l'aminoàcid més abundant)</li>
+                <li>Alanina (racèmica)</li>
+                <li>Àcid aspàrtic (racèmic)</li>
+                <li>Leucina, isoleucina, àcid ε-amino-n-caproic (en traces)</li>
+                <li>Isovalina, norvalina, β-amino-n-butíric, β-aminoisobutíric, 3-aminopentanoic (racèmics)</li>
+            </ul>
+        </li>
+        <li><strong>Amines</strong>
+            <ul>
+                <li>Metilamina</li>
+                <li>Etilamina</li>
+                <li>Altres 14 amines primàries alifàtiques identificades</li>
+            </ul>
+        </li>
+        <li><strong>Formaldehid</strong></li>
+        <li><strong>Àcids carboxílics</strong>
+            <ul>
+                <li>Àcid fòrmic</li>
+                <li>Àcid acètic</li>
+                <li>Altres 7 àcids monocarboxílics (C1-C7)</li>
+                <li>2 àcids dicarboxílics</li>
+            </ul>
+        </li>
+        <li><strong>Hidrocarburs aromàtics policíclics</strong></li>
+        <li><strong>N-heterocicles</strong>
+            <ul>
+                <li>Adenina</li>
+                <li>Guanina</li>
+                <li>Citosina</li>
+                <li>Timina</li>
+                <li>Uracil</li>
+                <li>Altres 18 N-heterocicles diferents</li>
+            </ul>
+        </li>
+        <li><strong>Altres compostos</strong>
+            <ul>
+                <li>Compostos amb C, H, N, O, S i Mg</li>
+                <li>~10,000 espècies químiques que contenen nitrogen</li>
+            </ul>
+        </li>
+    </ul>
+
+
+   
+
+    <h2>Articles utilitzats</h2>
+    <ol>
+        <li>
+            Lauretta, D. S., Connolly, H. C., Zega, T. J., DellaGiustina, D. N., Glavin, D. P., & els col·laboradors. (2025). 
+            <em>Abundant ammonia and nitrogen-rich soluble organic matter in samples from asteroid (101955) Bennu</em>. 
+            Nature Astronomy. https://doi.org/10.1038/s41550-024-02472-9
+        </li>
+        <li>
+            McCoy, T. J., Russell, S. S., Zega, T. J., Thomas-Keprta, K. L., Singerling, S. A., & els col·laboradors. (2025). 
+            <em>An evaporite sequence from ancient brine recorded in Bennu samples</em>. 
+            Nature, 637, 1072-1077. https://doi.org/10.1038/s41586-024-08495-6
+        </li>
+    </ol>
+
+    <h2>Nota</h2>
+    <p>
+        Els articles citats proporcionen informació crucial sobre la composició química i el context geològic de les mostres recollides de l'asteroide Bennu per la missió OSIRIS-REx.
+    </p>
+    <script>
+    $(document).ready(function() {
+        $('#taula-meteorits').DataTable({
+            "paging": true,         // Paginació
+            "searching": true,      // Cercador integrat
+            "ordering": true,       // Ordenació de columnes
+            "info": true,           // Mostra informació de la taula (ex: "Mostrant 1 a 4 de 4 entrades")
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json" // Traducció al català
+            },
+            "pageLength": 5,        // Nombre de files per pàgina
+            "lengthMenu": [5, 10, 25, 50], // Opcions de files per pàgina
+            "order": [[3, "desc"]]  // Ordenar inicialment per l'any, de més nou a més antic
+        });
+    });
+</script>
+<h1>Asteroides perillosos per la Terra: Asteroides 2024 YR4</h1>
+  
+
+
+  
+    <h1>Càlculs sobre l'Asteroide 2024 YR4</h1>
+    <h2>1. Dades conegudes:</h2>
+    <ul>
+        <li>Diàmetre: \(D = 55\,m\)</li>
+        <li>Massa: \(M = 220\times 10^6\,kg\)</li>
+        <li>Probabilitat d'impacte el 22 de desembre de 2032: \(2.1\%\)</li>
+        <li>Distància més probable: \(276000\,km\)</li>
+    </ul>
+
+    <h2>2. Energia d'impacte:</h2>
+    <p>Suposant una velocitat típica d'entrada d'un asteroide de \(v = 20\,km/s = 20000\,m/s\):</p>
+    <p>Energia cinètica:</p>
+    <p>\[ E = \frac{1}{2} M v^2 \]</p>
+    <p>Substituint valors:</p>
+    <p>\[ E = \frac{1}{2}(220\times 10^6)(20000)^2 = 4.4\times 10^{15}\,J \]</p>
+    <p>Això equival aproximadament a:</p>
+    <p>\[ \frac{4.4\times 10^{15}}{4.18\times 10^{9}} = 1053.11\,kT \]</p>
+    <p>(on \(1\,kT = 4.18 \times 10^9 J\), equivalent a la bomba d'Hiroshima).</p>
+    
+    <h2>3. Efectes de l'impacte:</h2>
+    <ul>
+        <li>Cràter d'uns \(300 - 500\,m\) de diàmetre.</li>
+        <li>Explosió local devastadora, destrucció en desenes de quilòmetres.</li>
+        <li>Ona de xoc i incendis a varis km.</li>
+        <li>Si impacta en el mar, pot generar tsunamis regionals.</li>
+    </ul>
+
+    <h2>4. Desviació de l'asteroide:</h2>
+    <p>Força necessària per modificar trajectòria amb un impuls:</p>
+    <p>Suposem que necessitem canviar la velocitat en \(\Delta v = 1\,cm/s = 0.01\,m/s\).</p>
+    <p>Impuls requerit:</p>
+    <p>\[ \Delta p = M \cdot \Delta v = 220\times 10^6 \times 0.01 = 2.2\times 10^6\,kg\cdot m/s \]</p>
+    <p>Suposant un impacte amb una nau de \(1000\,kg\) a \(10\,km/s = 10000\,m/s\):</p>
+    <p>\[ p_{nau} = 1000 \times 10000 = 10^7\,kg\cdot m/s \]</p>
+    <p>Comparant amb l'impuls requerit:</p>
+    <p>\[ \frac{2.2\times 10^6}{10^7} = 0.22 \]</p>
+    <p>Necessitaríem aproximadament 0.22 naus d'aquest tipus, és a dir, una nau petita amb aquest impacte podria ser suficient amb un marge.</p>
+
+    <h2>5. Conclusions:</h2>
+    <ul>
+        <li>L'energia d'impacte seria superior a 1000 bombes d'Hiroshima.</li>
+        <li>Els danys serien locals, però greus si és zona habitada o prop de la costa.</li>
+        <li>Una missió d'impacte cinètic per desviar-lo és factible.</li>
+    </ul>
+
+    <p><em>Aquest és un càlcul educatiu simplificat. La defensa planetària requereix models més precisos i acció amb anys d'antelació.</em></p>
+
+    
+    
+    
+    
+</body>
+</html>
