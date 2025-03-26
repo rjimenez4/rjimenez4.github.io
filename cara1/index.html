@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js" integrity="sha512-I0Pwwz3PPNQkWes+rcSoQqikKFfRmTfGQrcNzZbm8ALaUyJuFdyRinl805shE8xT6iEWsWgvRxdXb3yhQNXKoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+  <script>
+let mic;
+function setup() {
+  createCanvas(400, 400);
+  mic=new p5.AudioIn();
+  mic.start();
+}
+
+function draw() {
+  let vol=mic.getLevel();
+  let h=map(vol,0,1,0,1200);
+  background(220);
+  //fill(80);//0 negre 255 blanc i entre mig grisos
+  //fill(255,0,0);//Si hi ha tres numeros el primer es el nivell de vermell
+  //fill(0,147,0);//El segon numero es nivell de verd de 0  a 255
+  //fill(0,0,255);//El tercer numero es nivell de blau de 0 a 255
+  fill(79,130,149);
+  ellipse(mouseX,mouseY,250,300);//cara
+  //mouseX i mouseY son 200
+  fill(11,62,94);
+  ellipse(mouseX-50,mouseY-50,50,20);//ull esquerra
+  ellipse(mouseX+50,mouseY-50,50,20);//ull dret
+  fill(255,4,0);
+  arc(mouseX,mouseY+50,120,40+h,0,PI,CHORD);
+}
+    </script>
+  </body>
+</html>
