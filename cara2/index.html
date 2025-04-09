@@ -1,0 +1,46 @@
+let mic;
+let aleatori;
+let sinus;//crea un espai a la memoria del ordinador per la variable sinus
+let cosinus;
+function setup() {
+  createCanvas(400, 400);
+  mic=new p5.AudioIn();
+  mic.start();
+}
+
+function draw() {
+  frameRate(5);
+  aleatori=random(0,400);
+  cosinus=cos(frameCount*0.01)*127;//calcula el cosinus del numero de fotograma per exemple si fa 60 fotogrames o frames per segon i el multiplico per 0.01 anira mes lent i calculara el numero de fotogrames
+  sinus=sin(frameCount*0.01)*30;
+  //strokeWeight(1);
+  stroke(0);
+  print("sinus",sinus)
+  let vol=mic.getLevel();
+  let h=map(vol,0,1,0,1200);
+  background(220);
+  //fill(80);//0 negre 255 blanc i entre mig grisos
+  //fill(255,0,0);//Si hi ha tres numeros el primer es el nivell de vermell
+  //fill(0,147,0);//El segon numero es nivell de verd de 0  a 255
+  //fill(0,0,255);//El tercer numero es nivell de blau de 0 a 255
+  fill(79,127-cosinus,127+cosinus);//color de la cara
+  ellipse(200,200,250,300);
+  fill(11,62,94);
+  ellipse(150,150,50,20);
+  ellipse(250,150,50,20);
+  fill(255,4+cosinus*2,0+cosinus*2);
+  arc(200,250,120+sinus,40+h,0,PI,CHORD);
+  mosca();
+  mosca();
+  mosca();
+}
+function mosca(){
+   aleatori=random(0,300);
+  print(aleatori);
+ noStroke();
+  fill(255);//color blanc
+  ellipse(85+aleatori,100+aleatori,35,40);//ala esquerra
+  ellipse(115+aleatori,100+aleatori,35,40);//ala dreta
+   fill(0);
+  ellipse(100+aleatori,100+aleatori,20,40);//cos de la mosca negra
+}
