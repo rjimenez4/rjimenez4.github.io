@@ -1,9 +1,5 @@
-let mic;
-function setup() {
-  createCanvas(400, 400);
-  mic=new p5.AudioIn();
-  mic.start();
-}
+
+
 
 function draw() {
   let vol=mic.getLevel();
@@ -129,14 +125,15 @@ function draw() {
       // Variables per a la mida de la mini imatge de la cara que es mostrarà
       const miniWidth = 120;
       const miniHeight = 120;
-      
+      let mic;
       // Funció setup de p5.js, s'executa una vegada al principi
       function setup() {
         // Creem un canvas (llindar per dibuixos) de 600x600 píxels
        // createCanvas(600, 600);
        
         createCanvas(windowWidth, windowHeight); // Canvi aquí
-        
+         mic=new p5.AudioIn();
+  mic.start();
         // Iniciem la captura de vídeo des de la càmera de l'usuari
         video = createCapture(VIDEO);
         video.size(480, 480);
@@ -246,14 +243,20 @@ function draw() {
         switch (dominant) {
           case "happy":
             // Cas: expressió "happy" (feliç) → es dibuixen ones radials
-            for (let i = 1; i <= 10; i++) {
-              // Es recorre des de 1 fins a 10 per dibuixar cercles creixents
-              stroke(random(200,255), random(200,255), 0, 150);
-              // Cada cercle té un traç amb tonalitats grogues (el color és aleatori entre 200 i 255 per vermell i verd)
-              ellipse(0, 0, i * 20 * intensity, i * 20 * intensity);
-              // Dibuixa una el·lipse centrada, amb mida en funció del número d'iteració i la intensitat de l'expressió
-            }
-            break;
+           let vol=mic.getLevel();
+  let h=map(vol,0,1,0,1200);
+  background(220);
+  //fill(80);//0 negre 255 blanc i entre mig grisos
+  //fill(255,0,0);//Si hi ha tres numeros el primer es el nivell de vermell
+  //fill(0,147,0);//El segon numero es nivell de verd de 0  a 255
+  //fill(0,0,255);//El tercer numero es nivell de blau de 0 a 255
+  fill(79,130,149);
+  ellipse(200,200,250,300);
+  fill(11,62,94);
+  ellipse(150,150,50,20);
+  ellipse(250,150,50,20);
+  fill(255,4,0);
+  arc(200,250,120,40+h,0,PI,CHORD);            break;
           case "sad":
             // Cas: expressió "sad" (trist) → es dibuixen línies verticals
             stroke(50, 100, 200, 150);
