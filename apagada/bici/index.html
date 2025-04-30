@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equilibra la Xarxa!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: #fef7ea;
+      color: #333;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .bike {
+      font-size: 4em;
+      margin-bottom: 10px;
+    }
+
+    .frequency-display {
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 8px;
+      width: 160px;
+      margin: auto;
+    }
+
+    .bar {
+      display: flex;
+      height: 30px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .bar-section {
+      height: 100%;
+    }
+
+    .green { background-color: #8BC34A; }
+    .orange { background-color: #FFA726; }
+
+    .buttons button {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .buttons button:nth-child(1) { background: #e74c3c; color: white; }
+    .buttons button:nth-child(2) { background: #27ae60; color: white; }
+    .buttons button:nth-child(3) { background: #2980b9; color: white; }
+
+    .message { font-size: 1em; margin: 10px 0; min-height: 24px; }
+
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 15px;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .score { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Equilibra la Xarxa!</h1>
+    <div class="bike">🚴‍♂️</div>
+    <div id="frequency" class="frequency-display">50.00 Hz</div>
+    <div class="bar">
+      <div id="gen-bar" class="bar-section green"></div>
+      <div id="cons-bar" class="bar-section orange"></div>
+    </div>
+    <div class="buttons">
+      <button onclick="addConsumption()">+ Consum</button>
+      <button onclick="resetBalance()">Equilibri</button>
+      <button onclick="addGeneration()">+ Generació</button>
+    </div>
+    <div class="message" id="message"></div>
+    <div class="score">Punts: <span id="score">0</span></div>
+    <canvas id="chart" width="400" height="150"></canvas>
+  </div>
+
+  <script>
+    let generation = 50, consumption = 50;
+    let equilibriumTime = 0, score = 0;
+    let freqHistory = [];
+    let baseFluctuation = 0;
+    const ctx = document.getElementById('chart').getContext('2d');
+
+    const freqDisplay = document.getElementById('frequency');
+    const genBar = document.getElementById('gen-bar');
+    const consBar = document.getElementById('cons-bar');
+    const message = document.getElementById('message');
+    const scoreEl = document.getElementById('score');
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(freq, duration = 0.2) {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function updateDisplay() {
+      baseFluctuation += (Math.random() - 0.5) * 0.02;
+      baseFluctuation = Math.max(-0.9, Math.min(0.9, baseFluctuation));
+
+      let freq = 50 + (generation - consumption) * 0.05 + baseFluctuation;
+      freq = Math.max(47.0, Math.min(53.0, freq));
+      freqDisplay.textContent = freq.toFixed(2) + ' Hz';
+
+      if (freq < 49.5 || freq > 50.5) {
+        freqDisplay.style.backgroundColor = '#f44336';
+        freqDisplay.style.color = '#fff';
+        message.textContent = "Atenció! Risc a la xarxa!";
+        equilibriumTime = 0;
+        playBeep(200);
+      } else if (freq < 49.8 || freq > 50.2) {
+        freqDisplay.style.backgroundColor = '#ffeb3b';
+        freqDisplay.style.color = '#000';
+        message.textContent = "Estat d’alerta. Ajusta l’equilibri.";
+        equilibriumTime = 0;
+        playBeep(400);
+      } else {
+        freqDisplay.style.backgroundColor = '#8BC34A';
+        freqDisplay.style.color = '#000';
+        message.textContent = "Bona feina! La xarxa és estable.";
+        equilibriumTime++;
+        score++;
+        playBeep(800);
+      }
+
+      scoreEl.textContent = score;
+      const total = generation + consumption;
+      genBar.style.width = (generation / total) * 100 + '%';
+      consBar.style.width = (consumption / total) * 100 + '%';
+
+      freqHistory.push(freq);
+      if (freqHistory.length > 100) freqHistory.shift();
+      drawChart();
+    }
+
+    function drawChart() {
+      ctx.clearRect(0, 0, 400, 150);
+      ctx.beginPath();
+      ctx.moveTo(0, 75);
+      for (let i = 0; i < freqHistory.length; i++) {
+        const y = 75 - (freqHistory[i] - 50) * 20;
+        ctx.lineTo(i * 4, y);
+      }
+      ctx.strokeStyle = '#2980b9';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    function addGeneration() {
+      generation += 5;
+      updateDisplay();
+    }
+
+    function addConsumption() {
+      consumption += 5;
+      updateDisplay();
+    }
+
+    function resetBalance() {
+      generation = 50;
+      consumption = 50;
+      equilibriumTime = 0;
+      score = 0;
+      freqHistory = [];
+      baseFluctuation = 0;
+      updateDisplay();
+    }
+
+    setInterval(updateDisplay, 1000);
+    updateDisplay();
+  </script>
+</body>
+</html>
