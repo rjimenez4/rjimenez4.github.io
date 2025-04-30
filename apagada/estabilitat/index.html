@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Estabilitat de la Xarxa Elèctrica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2em;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #004080;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 0.2em;
+      margin-top: 2em;
+    }
+    ul {
+      margin-left: 2em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin-top: 1em;
+    }
+    strong {
+      color: #111;
+    }
+    em {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Estabilitat de la Xarxa Elèctrica Interconnectada</h1>
+  <p>Aquest document explica com la xarxa elèctrica d’Espanya (i Europa) pot suportar desequilibris importants entre la generació i el consum sense col·lapsar-se immediatament.</p>
+
+  <h2>1. Què és la inèrcia del sistema?</h2>
+  <p><strong>La inèrcia</strong> és l’energia cinètica emmagatzemada en els components mecànics en rotació de les grans centrals elèctriques (com turbines de gas, vapor, hidràuliques o nuclears).</p>
+  <ul>
+    <li>Quan hi ha un <strong>dèficit de generació</strong> (consum > producció), aquesta inèrcia actua com un "coixí" d’energia: els generadors giren una mica més lentament i compensen durant uns segons.</li>
+    <li>Quan hi ha un <strong>excés de generació</strong> (producció > consum), els generadors s'acceleren lleugerament.</li>
+    <li>Les fonts renovables com l’eòlica i la solar (amb inversors electrònics) no aporten inèrcia física, la qual cosa fa més difícil mantenir l’estabilitat del sistema.</li>
+  </ul>
+  <p>La inèrcia proporciona <strong>segons crucials</strong> perquè els sistemes automàtics de control actuïn abans que la freqüència es descontroli.</p>
+
+  <h2>2. Sistemes de control automàtic de la freqüència</h2>
+  <p>Quan la inèrcia no és suficient, entren en joc tres nivells de control que regulen la <strong>freqüència de la xarxa</strong> (idealment 50.00 Hz a Europa).</p>
+
+  <h3>2.1 Regulació Primària – FCR (Frequency Containment Reserve)</h3>
+  <ul>
+    <li><strong>Objectiu:</strong> Contenir la desviació inicial de la freqüència de manera immediata.</li>
+    <li><strong>Temps de resposta:</strong> Segons.</li>
+    <li><strong>Com funciona:</strong> Tots els generadors participants ajusten automàticament (i lleugerament) la seva potència segons la desviació de la freqüència.</li>
+    <li><strong>Acció local i automàtica:</strong> No coordinada per cap operador; és descentralitzada.</li>
+  </ul>
+
+  <h3>2.2 Regulació Secundària – aFRR (Automatic Frequency Restoration Reserve)</h3>
+  <ul>
+    <li><strong>Objectiu:</strong> Restablir la freqüència a 50.00 Hz i recuperar els fluxos d’energia previstos entre països.</li>
+    <li><strong>Temps de resposta:</strong> De desenes de segons fins a 5 minuts.</li>
+    <li><strong>Com funciona:</strong> El gestor de la xarxa (com REE a Espanya) envia ordres automàtiques a les centrals perquè augmentin o redueixin la seva generació.</li>
+  </ul>
+
+  <h3>2.3 Regulació Terciària – RR (Replacement Reserve)</h3>
+  <ul>
+    <li><strong>Objectiu:</strong> Substituir la regulació secundària i gestionar desequilibris més prolongats o grans.</li>
+    <li><strong>Temps de resposta:</strong> Minuts a hores.</li>
+    <li><strong>Com funciona:</strong> Activació manual o semiautomàtica de més centrals o gestió de la demanda.</li>
+  </ul>
+
+  <p><strong>Nota:</strong> Aquestes tres capes treballen conjuntament per evitar que la freqüència s’allunyi massa dels valors segurs (entre 49.5 Hz i 50.5 Hz).</p>
+
+  <h2>3. Per què varia la freqüència?</h2>
+  <p>La freqüència és l’indicador en temps real de l’equilibri entre generació i consum.</p>
+  <ul>
+    <li>Si la generació és <strong>major</strong> que el consum, la freqüència <strong>puja</strong>.</li>
+    <li>Si la generació és <strong>menor</strong> que el consum, la freqüència <strong>baixa</strong>.</li>
+  </ul>
+  <p>La demanda i la generació fluctuen contínuament (ex: electrodomèstics que s'encenen, núvols que tapen plaques solars, etc.), per tant, <strong>la freqüència també varia constantment</strong>.</p>
+
+  <h2>4. En resum</h2>
+  <ul>
+    <li>La inèrcia física de les màquines ofereix estabilitat immediata.</li>
+    <li>Els tres sistemes de control (FCR, aFRR, RR) actuen en diferents escales de temps per mantenir l’equilibri.</li>
+    <li>Només si aquests mecanismes fallen, el sistema pot arribar a desconnectar parts de la xarxa per protegir-se.</li>
+  </ul>
+
+<h2>Malta Inc. pot recollir excés energia fotovoltaica en sals foses a Puertollano (2025-2030)</h2>
+<img src="maltainc.png">
+  <p><em>Informació actualitzada a 29 d’abril de 2025.</em></p>
+
+</body>
+</html>
