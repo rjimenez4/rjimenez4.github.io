@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Funcionament de la Xarxa Elèctrica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2em;
+    }
+
+    h1 {
+      color: #00529B;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      color: #0074D9;
+      margin-top: 1.5em;
+      border-bottom: 2px solid #0074D9;
+      padding-bottom: 0.2em;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    ul {
+      margin-left: 2em;
+      margin-top: 0.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    strong {
+      color: #111;
+    }
+
+    em {
+      color: #666;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom right, #e0f0ff, #ffffff);
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Xarxa elèctrica</h1>
+  <p>Com funciona realment una xarxa elèctrica interconnectada com la d'Espanya (que forma part del sistema gegant europeu ENTSO-E). Anem a pams:</p>
+
+  <h2>1. Per què una diferència de milers de MW no atura el sistema immediatament?</h2>
+  <p>Un desequilibri de milers de Megawatts (MW) entre la generació i la demanda és una situació greu. Tanmateix, la xarxa no s'atura a l'instant per diverses raons fonamentals:</p>
+  
+  <ul>
+    <li>
+      <strong>Inèrcia del Sistema:</strong> Les grans centrals elèctriques utilitzen generadors amb grans masses rotatòries que emmagatzemen energia cinètica:
+      <ul>
+        <li>En cas de dèficit, l'energia es treu d'aquesta inèrcia, frenant els generadors gradualment.</li>
+        <li>En cas d'excés, els generadors s'acceleren lleugerament.</li>
+        <li>Les renovables tenen molta menys inèrcia, representant un repte.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Sistemes de Control Automàtic (Reserves):</strong>
+      <ul>
+        <li><strong>Regulació Primària (FCR):</strong> Actua en segons, ajustant la generació lleugerament.</li>
+        <li><strong>Regulació Secundària (aFRR):</strong> Actua en desenes de segons a minuts, amb senyals automàtics del gestor de xarxa.</li>
+        <li><strong>Regulació Terciària (RR):</strong> Actua en minuts a hores, sovint de forma manual.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Llindars d'Actuació:</strong> L'aturada del sistema és l'últim recurs i només passa si tots els mecanismes de defensa són superats.
+    </li>
+  </ul>
+
+  <p><strong>En resum:</strong> La inèrcia i els sistemes de control permeten suportar desequilibris greus durant uns segons o minuts, evitant una aturada instantània.</p>
+
+  <h2>2. Per què varia la freqüència?</h2>
+  <p>La freqüència (idealment 50.00 Hz a Europa) és l'indicador principal de l'equilibri entre generació i consum.</p>
+  
+  <ul>
+    <li>
+      <strong>Relació amb la Velocitat dels Generadors:</strong> Tots els generadors síncrons giren sincronitzats amb la mateixa velocitat.
+    </li>
+    <li>
+      <strong>Efecte del Desequilibri:</strong>
+      <ul>
+        <li>Generació > consum: Els rotors s'acceleren i la freqüència puja.</li>
+        <li>Generació < consum: Els rotors es frenen i la freqüència baixa.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Variacions Constants:</strong> Degut a canvis continus en demanda i generació (sobretot renovables).
+    </li>
+    <li>
+      <strong>Controls:</strong> Els sistemes de regulació mantenen la freqüència dins de límits operatius (ex. 49.85–50.15 Hz).
+    </li>
+  </ul>
+
+  <p><strong>En resum:</strong> La freqüència varia constantment perquè reflecteix el balanç instantani entre generació i consum elèctric.</p>
+
+  <p><em>Informació actualitzada a 29 d’abril de 2025.</em></p>
+</body>
+</html>
